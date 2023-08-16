@@ -25,25 +25,26 @@
 
 <body>
    <script>
-     const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus'];
-     planets.push('Neptune');
+    const npcs = [];
 
-     console.log('There are ' + planets.length + ' planets in our Solar System');
+    npcs.push(createNPC());
+    npcs.push(createNPC());
+    npcs.push(createNPC());
 
-     planets.push('Pluto');
-     console.log(planets);
+    function createNPC() {
+      const power =  Math.random() * 0.5 + 0.5;
+      const weapons = ["sword", "pistol", "axe", "spear"];
+      const weapon = weapons[Math.floor(Math.random() * weapons.length)];
+      const strength = Math.random() * 2 + 1.0;
+      const damage = 0;
 
-     planets.pop();
-     console.log(planets);
-
-     function month() {
-      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
-                      'August', 'September', 'October', 'November', 'December'];
-
-      const month = new Date().getMonth();
-
-      return months[month];
-     }
+      return {
+        power,
+        weapon,
+        strength,
+        damage
+      }
+    }
    </script> 
 </body>
 
